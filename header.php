@@ -29,20 +29,15 @@
 	<ul>
 	
 		<?php
-			$activeClass = " class=\"current_page_item\"";
-			$activeLink = is_home() ? $activeClass : "";
+			$activeClass = ' class="current_page_item"';
+			$activeLink = is_home() ? $activeClass : '';
 		?>
 
 		<li<?php echo $activeLink; ?>><a href="<?php bloginfo('siteurl'); ?>" title="Home">Home</a></li>
 
 		<?php 
 
-			$portfolioCat = 0;
-			
-			foreach((get_the_category()) as $category)
-				if ($category->category_nicename == 'portfolio')
-					$portfolioCat = $category->cat_ID;
-					
+			$portfolioCat = get_cat_id('portfolio');
 			$activeLink = is_in_category( $portfolioCat ) ? $activeClass : '';
 		?>
 		
