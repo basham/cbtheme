@@ -30,9 +30,11 @@ Template Name: Single Portfolio
 
 <?php
 
-	$portfolioCat = get_option('portfoliocategory');
-	$portfolioCat = explode(' id:', $portfolioCat);
-	$portfolioCat = $portfolioCat[1];
+	$portfolioCat = 0;
+
+	foreach((get_the_category()) as $category)
+		if ($category->category_nicename == 'portfolio')
+			$portfolioCat = $category->cat_ID;
 
 	$posts = get_posts('numberposts='.$postsPerCat.'&category='.$portfolioCat);
 
