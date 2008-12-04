@@ -13,7 +13,7 @@
 				<h2><a href="/portfolio/lakeview-church/">Lakeview Church</a></h2>
 				
 				<p><a href="/portfolio/lakeview-church/">
-					<img src="http://localhost:8888/wp-content/uploads/2008/12/lakeview-header.jpg" width="560" height="300" alt="Lakeview Church Homepage" title="Lakeview Church Homepage" />
+					<img src="http://chris.bash.am/wp-content/uploads/2008/12/lakeview-header.jpg" width="560" height="300" alt="Lakeview Church Homepage" title="Lakeview Church Homepage" />
 				</a></p>
 				
 				<p>Working alongside of the church's Network and System's Manager, <a href="http://infotech.lakeviewchurch.org/">David Szpunar</a>, we redesigned the website for <a href="http://www.lakeviewchurch.org/">Lakeview Church</a> of Indianapolis, IN, including converting the backend to utilize <a href="http://wordpress.org/">WordPress</a> as the content management system, developing a custom WordPress theme, and restructuring the sitemap.</p>
