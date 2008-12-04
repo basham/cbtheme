@@ -38,12 +38,14 @@ if ( typeof jQuery != "undefined" )
 
 function prettyLongDate(time, notUnix, ignoreTime, tzOffset){
 	//var date = new Date(time * 1000);
-	var date = !notUnix ? new Date(time * 1000) : new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," "));
+	var date = !notUnix ? new Date(time * 1000) : new Date((time || "").replace(/-/g,"/").replace(/[]/g," "));
+
 	if (tzOffset)
 		date.setHours( date.getHours() + tzOffset );
-	var	diff = (((new Date()).getTime() - date.getTime()) / 1000),
-		day_diff = Math.floor(diff / 86400);
-			
+		
+	var	diff = (( (new Date()).getTime() - date.getTime() ) / 1000);
+	var day_diff = Math.floor(diff / 86400);
+
 	if ( isNaN(day_diff) || day_diff < 0 )
 		return;
 	

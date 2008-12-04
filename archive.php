@@ -25,15 +25,15 @@ if (is_category("$portfoliocategory")) { ?>
 			$image = $image != NULL ? $image[0] : NULL;
 		?>
 		
-		<h2><span>February <strong>2008</strong></span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		
-		<?php the_excerpt(); ?>
+		<h2><span><?php the_time('F'); ?> <strong><?php the_time('Y'); ?></strong></span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		
 		<?php if ($image) : ?>
 		<p><a href="<?php the_permalink(); ?>">
-			<img src="<?=$image?>" alt="<?php the_title(); ?>" width="560" height="200" />
+			<img src="<?=$image?>" alt="<?php the_title(); ?>" width="560" />
 		</a></p>
 		<?php endif; ?>
+		
+		<?php the_excerpt(); ?>
 
 		<hr/>
 		

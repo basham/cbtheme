@@ -21,6 +21,7 @@ Theme URI: http://wp.chris.bash.am/themes/thetheme
 
 html {
 	font-size: .625em;
+	color: #333333;
 	background-color: #1B3659; }
 	
 html, #header h1, h3 span, h2 span {
@@ -29,13 +30,10 @@ html, #header h1, h3 span, h2 span {
 h1, h2, h3, h4 {
 	font-family: Georgia, "Times New Roman", Times, serif; }	
 	
-body, dl, dt, dd, ul, li, hr, h1, h2, h3 {
+body, dl, dt, dd, ul, ol, li, hr, h1, h2, h3 {
 	margin: 0;
 	padding: 0; }
-	
-li {
-	list-style: none; }
-	
+
 h1 {
 	padding: .2em .6em;
 	font-size: 5em;
@@ -45,16 +43,19 @@ h1 {
 	border: 4px double #D6D6C6;
 	border-width: 4px 0; }
 
-h1 p {
+h1 span {
+	display: block;
 	margin: .5em 0;
+	color: #555555;
+	line-height: 200%;
 	font-size: .4em;
 	width: 42em; }
-	
-h1 p strong {
+
+h1 strong {
 	color: #5B8246;
 	font-style: italic;
 	font-weight: normal; }
-
+	
 h2 {
 	padding: .2em 0 .2em;
 	margin: 0 0 .5em;
@@ -102,11 +103,10 @@ h4 {
 	color: #111C26;
 	color: #5B8246;
 	text-transform: uppercase;
-	border-bottom: 0px solid #D6D6C6; }
-	
+	border-bottom: 0 solid #D6D6C6; }
+
 p {
 	margin: 1.4em 0;
-	color: #555555;
 	font-size: 1.3em;
 	line-height: 200%; }
 
@@ -156,17 +156,17 @@ hr {
 	height: 0;
 	border: none; }
 
-dl, ul {
+dl {
 	margin: 2em 0;
-	border-top: 1px dotted #D6D6D6; }
-		
+	border-top: 1px dotted #D6D6D6;	}
+	
 dt {
 	float: left;
 	width: 16em;
 	padding: 1em;
 	text-transform: uppercase;
 	text-align: right;
-	color: #111C26; }
+	color: #5B8246; }
 
 dt span {
 	font-size: 1.2em;
@@ -180,27 +180,13 @@ dd {
 dd span {
 	font-size: 1.3em; }
 
-dd img {
-	margin-bottom: -.2em;
-	padding-right: .5em;
-	background: #FFFFFF;
-	border-width: 0; }
+ul {
+	margin: 0 3em;
+	list-style-type: square; }
 
-.dt {
-	float: left;
-	width: 44em;
-	margin: 2em 0; }
-	
-.dd {
-	width: 48em;
-	min-height: 230px;
-	padding: 0 0 3em 48em;
-	margin: 0 0 2em;
-	border-bottom: 1px dotted #D6D6D6; }
-	
 li {
-	padding: 1em 0;
-	border-bottom: 1px dotted #D6D6D6; }
+	font-size: 1.3em;
+	padding: 1em .5em; }
 
 li.error {
 	padding: 1em;
@@ -210,7 +196,9 @@ li.error {
 	background-color: #F0EFEB; }
 
 li a {
-	font-size: 1.3em; }
+	font-size: 1em; }
+	
+
 
 
 
@@ -233,7 +221,29 @@ li a {
 	
 .widget p.meta {
 	margin-top: -1em; }
+
+.widget ul {
+	margin: 2em 0;
+	list-style: none;
+	border-top: 1px dotted #D6D6D6; }
+
+.widget ul li {
+	padding: 1em 0;
+	line-height: 150%;
+	border-bottom: 1px dotted #D6D6D6; }
+
+.widget ul li a.published-time {
+	font-style: italic; }
 	
+.widget ul li.first {
+	font-size: 1.6em; }
+
+.widget ul li.first a.published-time {
+	display: block;
+	padding: .5em 0 0;
+	font-size: .8em; }
+
+/*
 .widget ul p {
 	display: inline;
 	padding-left: .5em; }
@@ -242,7 +252,7 @@ li a {
 	display: block;
 	margin: 0;
 	padding: 0; }
-
+*/
 
 .cols span {
 	display: block;
@@ -250,6 +260,11 @@ li a {
 	float: left;
 	border-left: 1px solid red;
 	border-right: 4px solid green; }
+	
+img.border {
+	display: block;
+	padding: 1px;
+	border: 1px solid #D6D6D6; }
 	
 /*
 .widget ul p span {
@@ -390,16 +405,16 @@ li a {
 
 
 ul.thumblist {
-	border-width: 0; }
+	border-width: 0;
+	margin: 0;
+	list-style: none; }
 	
 ul.thumblist li {
 	float: left;
-	width: 15em;
 	width: 10em;
+	padding: 1em 0;
+	margin: 0 1em;
 	border-width: 0; }
-	
-ul.thumblist li:first-child {
-	margin-right: 1em; }
 	
 ul.thumblist li a {
 	font-size: 1.4em;
@@ -493,11 +508,15 @@ ul.thumblist li strong {
 
 #header h1 strong {
 	font-weight: normal;
+	font-style: normal;
 	color: #C9C9AD; }
-	
+
 #header h1 span {
-	color: #5B8246; }
-	
+	display: inline;
+	color: #5B8246;
+	font-size: 1em;
+	line-height: 100%; }
+
 #header h1 a {
 	text-decoration: none; }
 
@@ -523,7 +542,9 @@ ul.thumblist li strong {
 
 #header ul li {
 	display: inline;
-	border: none; }
+	border: none;
+	font-size: 1em;
+	padding: 1em 0; }
 	
 #header ul li a {
 	padding: .5em 1em;

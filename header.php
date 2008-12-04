@@ -37,16 +37,12 @@
 
 		<?php 
 			$portfolioCat = get_option('portfoliocategory');
-			$portfolioCat = explode(" id:", $portfolioCat);
+			$portfolioCat = explode(' id:', $portfolioCat);
 			$portfolioCat = $portfolioCat[1];
-			$activeLink = is_in_category( $portfolioCat ) ? $activeClass : "";
+			$activeLink = is_in_category( $portfolioCat ) ? $activeClass : '';
 		?>
 		
-		<?php
-		/*
-		<li<?php echo $activeLink; ?>><a href="<?php echo get_category_link("$portfolioCat"); ?>" title="Portfolio">Portfolio</a></li> 
-		*/
-		?>
+		<li<?php echo $activeLink; ?>><a href="<?php echo get_category_link($portfolioCat); ?>" title="Portfolio">Portfolio</a></li>
 		
 		<?php wp_list_pages('sort_column=menu_order&title_li=&depth=1'); ?>	
 			

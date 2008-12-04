@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h1>My name is <a href="/about/">Chris Basham</a>.<p>I'm a web developer and designer with the <strong>passion</strong> and <strong>knowledge</strong> to create the <strong>extraordinary</strong>. Though my <a href="/about/">journey</a> has only begun, let me <a href="/">share</a> with you what I've learned along the way.</p></h1>
+<h1>My name is <a href="/about/">Chris Basham</a>.<span>I'm a web developer and designer with the <strong>passion</strong> and <strong>knowledge</strong> to create the <strong>extraordinary</strong>. Though my <a href="/about/">journey</a> has only begun, let me <a href="/">share</a> with you what I've learned along the way.</span></h1>
 				
 <div class="body">
 	
@@ -10,30 +10,22 @@
 
 				<h4>Latest Project</h4>
 				
-				<h2>Lakeview Church</h2>
+				<h2><a href="/portfolio/lakeview-church/">Lakeview Church</a></h2>
 				
-				<p>Fall 2007, I redesigned the website for <a href="http://www.lakeviewchurch.org/">Lakeview Church</a> of Indianapolis, IN. With the help of Network and System's Manager, <a href="http://infotech.lakeviewchurch.org/">David Szpunar</a>, we converted the site fully to WordPress.</p>
-				
-				<p><a href="http://www.lakeviewchurch.org/">
-					<img src="http://chris.bash.am/wp-content/uploads/2008/09/lvc.jpg" width="560" height="530" alt="Lakeview Church Homepage" title="Lakeview Church Homepage" />
+				<p><a href="/portfolio/lakeview-church/">
+					<img src="http://localhost:8888/wp-content/uploads/2008/12/lakeview-header.jpg" width="560" height="300" alt="Lakeview Church Homepage" title="Lakeview Church Homepage" />
 				</a></p>
 				
-				<p class="links">Project section coming soon. I promise. Crossing fingers as of <em>September 6, 2008</em>.</p>
+				<p>Working alongside of the church's Network and System's Manager, <a href="http://infotech.lakeviewchurch.org/">David Szpunar</a>, we redesigned the website for <a href="http://www.lakeviewchurch.org/">Lakeview Church</a> of Indianapolis, IN, including converting the backend to utilize <a href="http://wordpress.org/">WordPress</a> as the content management system, developing a custom WordPress theme, and restructuring the sitemap.</p>
+				
+				<p class="links"><a href="/portfolio/lakeview-church/"><strong>Read More</strong></a> | <a href="/portfolio/">View All Projects</a></p>
 
 			</div>
 			
 			<div class="col3">
 
-				<div id="digg-widget-container" class="widget">
-					<h3 class="loading"><small>Recent</small> Digg Stories</h3>
-					<div class="widget-body">
-						<ul></ul>
-						<p class="meta"></p>
-					</div>
-				</div>
-				
-				<div id="delicious-widget-container" class="widget">
-					<h3 class="loading"><small>Recent</small> Del.icio.us Bookmarks</h3>
+				<div id="twitter-widget-container" class="widget">
+					<h3 class="loading"><small>Recent</small> Twitter Updates</h3>
 					<div class="widget-body">
 						<ul></ul>
 						<p class="meta"></p>
@@ -62,8 +54,9 @@ function widgets() {
 	$js .= scriptIt( '/js/jquery-1.2.6.min.js' );
 	$js .= scriptIt( '/js/pretty.js' );
 	// Delicious API service is faster, so put it first
-	$js .= scriptIt( '/js/delicious-widget.js' );
-	$js .= scriptIt( '/js/digg-widget.js' );
+	//$js .= scriptIt( '/js/delicious-widget.js' );
+	$js .= scriptIt( '/js/twitter-widget.js' );
+	//$js .= scriptIt( '/js/digg-widget.js' );
 	echo $js;
 }
 

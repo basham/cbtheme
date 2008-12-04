@@ -19,99 +19,47 @@ Template Name: Single Portfolio
 	<div class="col5-3-wrap">
 	
 		<div class="col5">
-					<ul class="thumblist">
-			
-			<li style="margin-right:1.5em"><a href="#">
-				<img width="90" height="90" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>PING Plateform</strong>
-			</a></li>
-			
-			<li style="margin-right:1.5em"><a href="#">
-				<img width="90" height="90" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>CSS Zen Garden</strong>
-			</a></li>
-
-			<li style="margin-right:1.5em"><a href="#">
-				<img width="90" height="90" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>Memberbase</strong>
-			</a></li>
-			
-			<li style="margin-right:1.5em"><a href="#">
-				<img width="90" height="90" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>PING Plateform</strong>
-			</a></li>
-			
-			<li><a href="#">
-				<img width="90" height="90" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>CSS Zen Garden</strong>
-			</a></li>
-			
-			</ul>
-			
-			<hr/>
-
-			<ul class="thumblist">
-			
-			<li style="margin-right:2em; width: 9.5em"><a href="#">
-				<img width="85" height="85" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>PING Plateform</strong>
-			</a></li>
-			
-			<li style="margin-right:2em; width: 9.5em"><a href="#">
-				<img width="85" height="85" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>CSS Zen Garden</strong>
-			</a></li>
-
-			<li style="margin-right:2em; width: 9.5em"><a href="#">
-				<img width="85" height="85" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>Memberbase</strong>
-			</a></li>
-			
-			<li style="margin-right:2em; width: 9.5em"><a href="#">
-				<img width="85" height="85" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>PING Plateform</strong>
-			</a></li>
-			
-			<li style="width: 9.5em"><a href="#">
-				<img width="85" height="85" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>CSS Zen Garden</strong>
-			</a></li>
-			
-			</ul>
-			
-			<hr/>
 			
 <?php the_content(); ?>
 		
 		</div>
 		
-		<div class="col3">
+		<div class="col3 sidebar">
 		
 			<h3><small>More</small> Projects</h3>
 
-			<ul class="thumblist">
-			
-			<li><a href="#">
-				<img width="90" height="60" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>PING Plateform</strong>
-			</a></li>
-			
-			<li style="margin-right:1em"><a href="#">
-				<img width="90" height="60" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>CSS Zen Garden</strong>
-			</a></li>
+<?php
 
-			<li><a href="#">
-				<img width="90" height="60" title="Reitz Journalism Homepage" alt="Reitz Journalism Homepage" src="http://localhost:8888/wp-content/uploads/2008/08/rj-screenshot-01.jpg"/>
-				<strong>Memberbase</strong>
-			</a></li>
-			
-			</ul>
-			
-			<hr/>
-			
-			<p class="links"><a href="#"><strong>View All Projects</strong></a></p>
+	$portfolioCat = get_option('portfoliocategory');
+	$portfolioCat = explode(' id:', $portfolioCat);
+	$portfolioCat = $portfolioCat[1];
+
+	$posts = get_posts('numberposts='.$postsPerCat.'&category='.$portfolioCat);
+
+	$i = 0;
+	
+	foreach($posts as $post) {
+		$t = the_title('', '', false);
+		$img = get_post_meta($post->ID, 'image-preview', true);
 		
+		if ($i % 2 == 0)
+			echo '<ul class="thumblist">';
+			
+		echo '<li><a href="'.get_permalink().'">';
+			echo '<img width="120" height="65" title="'.$t.'" alt="'.$t.'" src="'.$img.'"/>';
+			echo '<strong>'.$t.'</strong>';
+		echo '</a></li>';
+
+		if ($i % 2 == 1)
+			echo '</ul><hr/>';
+		
+		$i++;
+	}
+
+?>
+			
+			<p class="links"><a href="<?php echo get_category_link($portfolioCat); ?>"><strong>View All Projects</strong></a></p>
+
 		</div>
 		
 		<hr/>
