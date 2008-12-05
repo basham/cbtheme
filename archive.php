@@ -35,7 +35,7 @@ if (is_category("$portfoliocategory")) { ?>
 		</a></p>
 		<?php endif; ?>
 		
-		<?php the_excerpt(); ?>
+		<p><?php the_excerpt(); ?></p>
 
 		<hr/>
 		

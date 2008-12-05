@@ -38,8 +38,6 @@ Template Name: Single Portfolio
 			
 			<?php echo get_post_meta($post->ID, 'summary', true); ?>
 			
-			<h3>Screenshots</h3>
-			
 		</div>
 		
 		<hr/>
