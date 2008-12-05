@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 
-<h1>My name is <a href="/about/">Chris Basham</a>.<span>I'm a web developer and designer with the <strong>passion</strong> and <strong>knowledge</strong> to create the <strong>extraordinary</strong>. Though my <a href="/about/">journey</a> has only begun, let me <a href="/">share</a> with you what I've learned along the way.</span></h1>
+<div id="headline">
+
+	<h1>My name is <a href="/about/">Chris Basham</a>.</h1>
+	
+	<p>I'm a web developer and designer with the <strong>passion</strong> and <strong>knowledge</strong> to create the <strong>extraordinary</strong>.<br/>Though my <a href="/about/">journey</a> has only begun, let me <a href="/">share</a> with you what I've learned along the way.</p>
+	
+</div>
 				
 <div class="body">
 	
@@ -18,7 +24,7 @@
 				
 				<p>Working alongside of the church's Network and System's Manager, <a href="http://infotech.lakeviewchurch.org/">David Szpunar</a>, we redesigned the website for <a href="http://www.lakeviewchurch.org/">Lakeview Church</a> of Indianapolis, IN, including converting the backend to utilize <a href="http://wordpress.org/">WordPress</a> as the content management system, developing a custom WordPress theme, and restructuring the sitemap.</p>
 				
-				<p class="links"><a href="/portfolio/lakeview-church/"><strong>Read More</strong></a> | <a href="/portfolio/">View All Projects</a></p>
+				<p class="links"><a href="/portfolio/lakeview-church/"><strong>Read More</strong></a></p>
 
 			</div>
 			

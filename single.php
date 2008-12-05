@@ -11,52 +11,35 @@ Template Name: Single Portfolio
 	<?php while (have_posts()) : the_post(); ?>
 	
 
-<h1><?php the_title(); ?></h1>
-
+<div id="headline">
+	<h1><?php the_title(); ?></h1>
+	<p><?php the_excerpt(); ?></p>
+</div>
 
 <div class="body">
-				
-	<div class="col5-3-wrap">
 	
-		<div class="col5">
+	<div class="col1 image-header">
+		<img src="<?php echo get_post_meta($post->ID, 'image-header', true); ?>" />
+	</div>
+	
+	<div class="col2-wrap">
+	
+		<div class="col2">
 			
-<?php the_content(); ?>
+			<p class="lead"><?php the_excerpt(); ?></p>
+		
+			<?php the_content(); ?>
 		
 		</div>
 		
-		<div class="col3 sidebar">
-		
-			<h3><small>More</small> Projects</h3>
-
-<?php
-
-	$portfolioCat = get_cat_id('portfolio');
-	$posts = get_posts('numberposts='.$postsPerCat.'&category='.$portfolioCat);
-
-	$i = 0;
-	
-	foreach($posts as $post) {
-		$t = the_title('', '', false);
-		$img = get_post_meta($post->ID, 'image-preview', true);
-		
-		if ($i % 2 == 0)
-			echo '<ul class="thumblist">';
+		<div class="col2">
 			
-		echo '<li><a href="'.get_permalink().'">';
-			echo '<img width="120" height="65" title="'.$t.'" alt="'.$t.'" src="'.$img.'"/>';
-			echo '<strong>'.$t.'</strong>';
-		echo '</a></li>';
-
-		if ($i % 2 == 1)
-			echo '</ul><hr/>';
-		
-		$i++;
-	}
-
-?>
+			<h3>Summary</h3>
 			
-			<p class="links"><a href="<?php echo get_category_link($portfolioCat); ?>"><strong>View All Projects</strong></a></p>
-
+			<?php echo get_post_meta($post->ID, 'summary', true); ?>
+			
+			<h3>Screenshots</h3>
+			
 		</div>
 		
 		<hr/>

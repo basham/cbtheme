@@ -6,7 +6,9 @@ $portfoliocategory = explode("id:", $portfoliocategory);
 $portfoliocategory = $portfoliocategory[1];
 if (is_category("$portfoliocategory")) { ?>
 
-<h1><?php echo $wp_query->queried_object->name ?></h1>
+<div id="headline">
+	<h1><?php echo $wp_query->queried_object->name ?></h1>
+</div>
 					
 <div class="body">
 
