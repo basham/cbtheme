@@ -19,7 +19,7 @@ Template Name: Single Portfolio
 <div class="body">
 	
 	<div class="col1 image-header">
-		<img src="<?php echo get_post_meta($post->ID, 'image-header', true); ?>" />
+		<img src="<?php echo get_post_meta($post->ID, 'image-header', true); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
 	</div>
 	
 	<div class="col2-wrap">

@@ -46,6 +46,12 @@ h2 {
 	font-weight: normal;
 	color: #111C26;
 	border-bottom: 4px double #D6D6C6; }
+
+h2 span {
+	float: right;
+	padding-top: .8em;
+	color: #555555;
+	font-size: .5em; }
 	
 h3 {
 	padding: 1em 0 .2em;
@@ -66,14 +72,7 @@ h3 span {
 	float: right;
 	padding-top: .6em;
 	color: #555555;
-	font-size: .6em;
-	text-transforms: uppercase; }
-	
-h2 span {
-	float: right;
-	padding-top: .8em;
-	color: #555555;
-	font-size: .5em; }
+	font-size: .6em; }
 	
 h3.loading {
 	background: transparent url(images/loader.gif) no-repeat center right; }
