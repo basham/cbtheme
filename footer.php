@@ -13,7 +13,7 @@
 
 		foreach($posts as $post) {
 			$t = the_title('', '', false);
-			$img = get_post_meta($post->ID, 'image-preview', true);
+			$img = get_post_meta($post->ID, 'image-thumbnail', true);
 
 			//if ($i % 2 == 0)
 			//	echo '<ul class="thumblist">';
