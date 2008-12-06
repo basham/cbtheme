@@ -10,10 +10,21 @@ Template Name: Single Portfolio
 
 	<?php while (have_posts()) : the_post(); ?>
 	
+<?php
+
+$content = get_the_content();
+//$content = apply_filters('the_content', $content);
+//$content = str_replace(']]>', ']]&gt;', $content);
+
+$columns = explode('<!--column-->', $content);
+
+$col1 = $columns[0];
+$col2 = $columns[1];
+
+?>
 
 <div id="headline">
 	<h1><?php the_title(); ?></h1>
-	<p><?php the_excerpt(); ?></p>
 </div>
 
 <div class="body">
@@ -28,7 +39,7 @@ Template Name: Single Portfolio
 			
 			<p class="lead"><?php the_excerpt(); ?></p>
 		
-			<?php the_content(); ?>
+			<?php echo $col1; ?>
 		
 		</div>
 		
@@ -37,6 +48,8 @@ Template Name: Single Portfolio
 			<h3>Summary</h3>
 			
 			<?php echo get_post_meta($post->ID, 'summary', true); ?>
+			
+			<?php echo $col2; ?>
 			
 		</div>
 		
